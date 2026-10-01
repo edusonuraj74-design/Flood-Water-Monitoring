@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 240px;
+    background: #0f172a;
+    color: white;
+    padding: 25px 15px;
+    position: fixed;
+    height: 100vh;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+nav button {
+    border: none;
+    background: transparent;
+    color: #cbd5e1;
+    padding: 14px;
+    text-align: left;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+nav button:hover,
+nav button.active {
+    background: #1e293b;
+    color: white;
+}
+
+.system-status {
+    position: absolute;
+    bottom: 30px;
+    left: 25px;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background: #22c55e;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+
+/* Main */
+
+.main {
+    margin-left: 240px;
+    padding: 30px;
+    width: calc(100% - 240px);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 30px;
+    margin-bottom: 7px;
+}
+
+.header p {
+    color: #64748b;
+}
+
+.location {
+    background: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+}
+
+
+/* Cards */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.water-level {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.water-level small {
+    font-size: 18px;
+}
+
+.status {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.normal {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.danger {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+
+/* Alert */
+
+.alert-box {
+    margin-top: 25px;
+    padding: 20px;
+    background: #fff7ed;
+    border-left: 5px solid #f97316;
+    border-radius: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.alert-icon {
+    font-size: 25px;
+}
+
+.alert-box h3 {
+    margin-bottom: 5px;
+}
+
+.alert-box p {
+    color: #64748b;
+}
+
+
+/* Chart */
+
+.chart-card,
+.readings-card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    margin-top: 25px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chart-header h2 {
+    margin-bottom: 5px;
+}
+
+.chart-header p {
+    color: #64748b;
+}
+
+select {
+    padding: 9px 15px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+}
+
+.chart-container {
+    height: 350px;
+    margin-top: 25px;
+}
+
+
+/* Table */
+
+.readings-card h2 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    color: #64748b;
+    font-size: 14px;
+}
+
+td {
+    font-size: 14px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .main {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+}

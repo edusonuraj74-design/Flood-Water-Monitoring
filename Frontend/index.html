@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flood Water Monitoring System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                🌊
+                <span>FloodWatch</span>
+            </div>
+
+            <nav>
+                <button class="active">📊 Dashboard</button>
+                <button>📈 History</button>
+                <button>⚠️ Alerts</button>
+                <button>⚙️ Settings</button>
+            </nav>
+
+            <div class="system-status">
+                <span class="status-dot"></span>
+                System Online
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main">
+
+            <header class="header">
+
+                <div>
+                    <h1>Flood Water Monitoring</h1>
+                    <p>Real-time river water level monitoring system</p>
+                </div>
+
+                <div class="location">
+                    📍 River Monitoring Station
+                </div>
+
+            </header>
+
+
+            <!-- Cards -->
+            <section class="cards">
+
+                <div class="card water-card">
+
+                    <div class="card-title">
+                        <span>Current Water Level</span>
+                        <span>🌊</span>
+                    </div>
+
+                    <div class="water-level">
+                        <span id="waterLevel">4.25</span>
+                        <small>m</small>
+                    </div>
+
+                    <div id="status" class="status warning">
+                        🟡 WARNING
+                    </div>
+
+                    <p>Last updated: <span id="lastUpdated">--</span></p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-title">
+                        <span>Today's Maximum</span>
+                        <span>📈</span>
+                    </div>
+
+                    <h2 id="maxLevel">4.25 m</h2>
+
+                    <p>Highest recorded level today</p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-title">
+                        <span>Today's Minimum</span>
+                        <span>📉</span>
+                    </div>
+
+                    <h2 id="minLevel">2.10 m</h2>
+
+                    <p>Lowest recorded level today</p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-title">
+                        <span>Risk Level</span>
+                        <span>⚠️</span>
+                    </div>
+
+                    <h2 id="riskLevel">Medium</h2>
+
+                    <p>Based on current water level</p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Alert -->
+            <section id="alertBox" class="alert-box">
+
+                <div class="alert-icon">⚠️</div>
+
+                <div>
+                    <h3>Water Level Warning</h3>
+                    <p>
+                        Water level is increasing. Keep monitoring the river condition.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- Graph -->
+            <section class="chart-card">
+
+                <div class="chart-header">
+
+                    <div>
+                        <h2>Water Level History</h2>
+                        <p>Today's water level readings</p>
+                    </div>
+
+                    <select id="timeRange">
+                        <option>Today</option>
+                        <option>Last 24 Hours</option>
+                        <option>Last 7 Days</option>
+                    </select>
+
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="waterChart"></canvas>
+                </div>
+
+            </section>
+
+
+            <!-- Recent Readings -->
+            <section class="readings-card">
+
+                <h2>Recent Readings</h2>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Water Level</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="readingsTable">
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
